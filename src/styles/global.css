@@ -21,6 +21,10 @@ input {
   outline: none;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 .btn {
   padding: 10px 15px;
   border: none;

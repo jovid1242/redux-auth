@@ -1,58 +1,66 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userName, password } from "../../redux/user/UserSlice";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import "../../styles/auth/login.scss";
 
 export default function Login() {
-  const [login, setLogin] = useState("");
-  const [pass, setPass] = useState("");
-
   const userState = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLoginInput = (event) => {
-    setLogin(event.target.value);
+    const str = event.target.value;
+    dispatch(userName(str.split("")[0].toUpperCase() + str.slice(1)));
   };
 
   const handlePassInput = (event) => {
-    setPass(event.target.value);
+    dispatch(password(event.target.value));
   };
 
   const submitForm = (event) => {
     event.preventDefault();
-    dispatch(userName(login), password(pass));
-    // dispatch(password(event.target.value));
-    console.log("userState", userState);
+    if (userState.userName === "Admin" && userState.password === "12345") {
+      localStorage.setItem("auth", JSON.stringify(true));
+      navigate("/profile");
+    } else {
+      toast.error("Имя пользователя или пароль введены не верно");
+    }
   };
 
   return (
-    <div className="container login">
-      <div className="login__wrapper">
-        <form className="form" onSubmit={submitForm}>
-          <h3>Форма авторизации</h3>
-          <div className="form__group">
-            <label htmlFor="in1">{"error"}</label>
-            <input
-              type="text"
-              name="login"
-              onChange={handleLoginInput}
-              id="in1"
-            />
-          </div>
-          <div className="form__group">
-            <label htmlFor="in2">{"error"}</label>
-            <input
-              type="password"
-              name="password"
-              onChange={handlePassInput}
-              id="in2"
-            />
-          </div>
-          <div className="form__group">
-            <button className="btn">Отправить</button>
-          </div>
-        </form>
+    <>
+      <ToastContainer />
+      <div className="container login">
+        <div className="login__wrapper">
+          <form className="form" onSubmit={submitForm}>
+            <h3>Форма авторизации</h3>
+            <div className="form__group">
+              <label htmlFor="in1">{"error"}</label>
+              <input
+                type="text"
+                name="login"
+                onChange={handleLoginInput}
+                id="in1"
+              />
+            </div>
+            <div className="form__group">
+              <label htmlFor="in2">{"error"}</label>
+              <input
+                type="password"
+                name="password"
+                onChange={handlePassInput}
+                id="in2"
+              />
+            </div>
+            <div className="form__group">
+              <button className="btn">Отправить</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

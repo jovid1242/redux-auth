@@ -37,7 +37,7 @@ export default function Header() {
               return (
                 <li
                   className={
-                    location.pathname == el.href
+                    location.pathname === el.href
                       ? "menu__items active-list"
                       : "menu__items "
                   }

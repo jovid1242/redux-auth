@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import Reactб, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 // import pages
 import Home from "../pages/Home";
 import News from "../pages/News";
@@ -8,6 +8,14 @@ import Header from "../components/Header/Header";
 import Login from "../pages/auth/Login";
 
 export default function XRoute() {
+  const navigate = useNavigate();
+  const isAuth = localStorage.getItem("auth");
+
+  useEffect(() => {
+    if (isAuth === null) {
+      navigate("/profile");
+    }
+  }, []);
   return (
     <>
       <Header />
