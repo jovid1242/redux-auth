@@ -1,0 +1,27 @@
+.post {
+  position: relative;
+  width: 550px;
+  max-height: 400px;
+  min-height: 350px;
+  z-index: 1;
+  margin-bottom: 20px;
+  &__image {
+    img {
+      position: relative;
+      width: 550px;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    position: relative;
+
+    .info {
+      span {
+        font-size: 20px;
+        font-weight: bold;
+        color: #d1b00a;
+      }
+    }
+  }
+}
