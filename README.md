@@ -57,7 +57,7 @@ npm run start
 
 ## Used fonts
 
-Google Fonts/Raleway :
+Google Fonts/Poppins :
 
 ```sh
 <link rel="preconnect" href="https://fonts.googleapis.com" />
