@@ -43,7 +43,7 @@ export default function Login() {
             <div className="container login">
                 <div className="login__wrapper">
                     <form className="form" onSubmit={submitForm}>
-                        <h3>Форма авторизации</h3>
+                        <h3>Форма авторизация</h3>
                         <div className="form__group">
                             <label htmlFor="in1">Логин</label>
                             <input
@@ -65,7 +65,7 @@ export default function Login() {
                             />
                         </div>
                         <div className="form__group">
-                            <button className="btn">Отправить</button>
+                            <button className="btn">Вход</button>
                         </div>
                     </form>
                 </div>
