@@ -6,7 +6,7 @@ The application can display the following pages:
 
 -   /home
 -   /login - login and password entry page
--   /news - page with news (any information of the same type)
+-   /news - page with news
 -   /profile - page with free text, inaccessible without authorization
 
 Main links on the site:
@@ -53,4 +53,17 @@ For _npm_:
 
 ```sh
 npm run start
+```
+
+## Used fonts
+
+Google Fonts/Raleway :
+
+```sh
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;900&family=Jost:wght@200;300;400;500;600;700;800;900&family=Kanit:wght@200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;400;500;600;700;800;900&family=Orbitron:wght@900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600;700;800;900&family=Russo+One&family=Source+Code+Pro:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+/>
 ```
