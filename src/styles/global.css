@@ -1,51 +1,51 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 ul,
 li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 button,
 input {
-  outline: none;
+    outline: none;
 }
 
 button:disabled {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 .btn {
-  padding: 10px 15px;
-  border: none;
-  background: #ffd000;
-  border-radius: 8px;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    background: #ffd000;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
 }
 .btn:hover {
-  box-shadow: 0 2px 15px #8a710399;
+    box-shadow: 0 2px 15px #8a710399;
 }
 
 .d-none {
-  display: none !important;
+    display: none !important;
 }
 
 .container {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
 }

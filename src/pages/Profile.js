@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import "../styles/profile/profile.scss";
+import React, { useEffect } from 'react'
+import '../styles/profile/profile.scss'
 
 export default function Profile() {
-  return (
-    <>
-      <div className="profile container">
-        <h2>Добро пожаловать в Провиль</h2>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div className="profile container">
+                <h2>Добро пожаловать в Провиль</h2>
+            </div>
+        </>
+    )
 }

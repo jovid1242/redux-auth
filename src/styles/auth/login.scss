@@ -1,24 +1,24 @@
 .login {
-  width: 100%;
-  height: calc(100vh - 70px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &__wrapper {
-    width: 50%;
+    &__wrapper {
+        width: 50%;
 
-    .form {
-      &__group {
-        margin: 10px 0;
+        .form {
+            &__group {
+                margin: 10px 0;
 
-        input {
-          width: 100%;
-          padding: 10px;
-          border-radius: 8px;
-          border: 1px solid #ffd000;
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 1px solid #ffd000;
+                }
+            }
         }
-      }
     }
-  }
 }

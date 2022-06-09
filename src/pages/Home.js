@@ -1,10 +1,10 @@
-import React from "react";
-import Posts from "../components/Posts/Posts";
+import React from 'react'
+import Posts from '../components/Posts/Posts'
 
 export default function Home() {
-  return (
-    <>
-      <Posts />
-    </>
-  );
+    return (
+        <>
+            <Posts />
+        </>
+    )
 }
