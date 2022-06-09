@@ -10,7 +10,7 @@ export const routeNames = {
     PROFILE: '/profile',
 }
 
-export const publicRiutes = [
+export const publicRoutes = [
     {
         id: 1,
         component: Home,

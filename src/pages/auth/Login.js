@@ -30,7 +30,7 @@ export default function Login() {
     const submitForm = (event) => {
         event.preventDefault()
         dispatch(login())
-        if (userState.isAuth === 1) {
+        if (userState.isAuth) {
             navigate('/profile')
         } else {
             notifayWarning(userState.isError)
@@ -65,7 +65,9 @@ export default function Login() {
                             />
                         </div>
                         <div className="form__group">
-                            <button className="btn">Вход</button>
+                            <button type="submit" className="btn">
+                                Вход
+                            </button>
                         </div>
                     </form>
                 </div>

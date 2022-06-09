@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    isAuth: 0,
+    isAuth: Boolean(Number(localStorage.getItem('auth'))),
     user: {
         username: '',
         password: '',
@@ -31,14 +31,14 @@ export const userSlice = createSlice({
                 state.user.password === '12345'
             ) {
                 localStorage.setItem('auth', 1)
-                state.isAuth = localStorage.getItem('auth')
+                state.isAuth = true
             } else {
                 state.isError = 'Имя пользователя или пароль введены не верно'
             }
         },
         logout: (state) => {
             state.user = {}
-            state.isAuth = 0
+            state.isAuth = false
             localStorage.removeItem('auth')
         },
     },

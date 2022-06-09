@@ -25,6 +25,11 @@ Project uses a number of open source projects to work properly:
 -   [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js - axios/axios: Promise based HTTP client for the browser and node.js.
 -   [React-Toastify](https://www.npmjs.com/package/react-toastify) - React notification made easy.
 
+# TESTING (LOGIN)
+
+LOGIN: Admin
+PASSWORD: 12345
+
 # How to:
 
 ### _install_

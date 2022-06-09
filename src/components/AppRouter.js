@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { privateRoutes, publicRiutes, routeNames } from '../routes/routes'
+import { privateRoutes, publicRoutes, routeNames } from '../routes/routes'
 
 function AppRouter() {
     const { isAuth } = useSelector((state) => state.auth)
     const getPublicRoutes = () => {
         return (
             <>
-                {publicRiutes.map((route) => {
+                {publicRoutes.map((route) => {
                     return (
                         <Route
                             path={route.path}
