@@ -24,6 +24,9 @@ input {
 button:disabled {
     cursor: not-allowed;
 }
+.ml2 {
+    margin-left: 2rem;
+}
 
 .btn {
     padding: 10px 15px;

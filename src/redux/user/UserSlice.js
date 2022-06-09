@@ -25,7 +25,7 @@ export const userSlice = createSlice({
         setError: (state, action) => {
             state.isError = action.payload
         },
-        login: (state, action) => {
+        login: (state) => {
             if (
                 state.user.username === 'Admin' &&
                 state.user.password === '12345'
@@ -36,11 +36,22 @@ export const userSlice = createSlice({
                 state.isError = 'Имя пользователя или пароль введены не верно'
             }
         },
+        logout: (state) => {
+            state.user = {}
+            state.isAuth = 0
+            localStorage.removeItem('auth')
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setIsAuth, setUserName, setUserPassword, login, setError } =
-    userSlice.actions
+export const {
+    setIsAuth,
+    setUserName,
+    setUserPassword,
+    login,
+    logout,
+    setError,
+} = userSlice.actions
 
 export default userSlice.reducer

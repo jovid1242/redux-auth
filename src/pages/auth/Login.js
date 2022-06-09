@@ -51,6 +51,7 @@ export default function Login() {
                                 name="username"
                                 onChange={handleLoginInput}
                                 id="in1"
+                                required
                             />
                         </div>
                         <div className="form__group">
@@ -60,6 +61,7 @@ export default function Login() {
                                 name="password"
                                 onChange={handlePassInput}
                                 id="in2"
+                                required
                             />
                         </div>
                         <div className="form__group">
