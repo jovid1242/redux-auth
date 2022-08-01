@@ -15,6 +15,9 @@ li {
 .d-none {
     display: none !important;
 }
+.pt120 {
+    padding-top: 120px;
+}
 .m-text {
     color: #203656 !important;
 }

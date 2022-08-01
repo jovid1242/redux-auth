@@ -1,6 +1,6 @@
 import React from 'react'
-
-// components
+import { Link } from 'react-router-dom'
+// ant
 import { Avatar, Card, Row, Col, Typography } from 'antd'
 
 // styles
@@ -9,7 +9,7 @@ import '../../styles/posts/post.scss'
 const { Meta } = Card
 const { Title } = Typography
 
-export default function Post({ title, text, image }) {
+export default function Post({ postId, title, text, image }) {
     return (
         <Row>
             <Col span={24}>
@@ -27,7 +27,11 @@ export default function Post({ title, text, image }) {
                         avatar={
                             <Avatar src="https://joeschmoe.io/api/v1/random" />
                         }
-                        title={<Title level={2}>{title}</Title>}
+                        title={
+                            <Link to={`/post/${postId}`}>
+                                <Title level={2}>{title}</Title>
+                            </Link>
+                        }
                         description={text}
                     />
                 </Card>
