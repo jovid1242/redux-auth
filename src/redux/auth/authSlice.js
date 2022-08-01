@@ -13,17 +13,10 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        setIsAuth: (state, action) => {
+        setAuth: (state, action) => {
             state.isAuth = action.payload
-        },
-        setUserName: (state, action) => {
-            state.user.username = action.payload
-        },
-        setUserPassword: (state, action) => {
-            state.user.password = action.payload
-        },
-        setError: (state, action) => {
-            state.isError = action.payload
+            state.user.username = action.payload.username
+            state.user.password = action.payload.password
         },
         login: (state) => {
             if (
@@ -45,13 +38,6 @@ export const authSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {
-    setIsAuth,
-    setUserName,
-    setUserPassword,
-    login,
-    logout,
-    setError,
-} = authSlice.actions
+export const { setAuth, login, logout } = authSlice.actions
 
 export default authSlice.reducer

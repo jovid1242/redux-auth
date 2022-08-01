@@ -8,4 +8,9 @@
     &__wrapper {
         width: 35%;
     }
+    .form__action-icon {
+        svg path {
+            fill: #fe4f70;
+        }
+    }
 }

@@ -2,17 +2,18 @@ import React from 'react'
 
 // components
 import { Col, Row, Space } from 'antd'
+import { useSelector } from 'react-redux'
 
 // router
 import { useLocation, Link } from 'react-router-dom'
 
-// icons
-import { MdOutlineMenuOpen } from 'react-icons/md'
 // styles
 import '../../styles/header/header.scss'
 
 export default function MHeader() {
     let location = useLocation()
+    const { isAuth } = useSelector((state) => state.auth)
+
     const menuData = [
         {
             id: 1,
@@ -20,9 +21,9 @@ export default function MHeader() {
             href: '/',
         },
         {
-            id: 3,
-            title: 'Профиль',
-            href: '/profile',
+            id: 2,
+            title: isAuth ? 'Профиль' : 'Вход',
+            href: isAuth ? '/profile' : '/login',
         },
     ]
 

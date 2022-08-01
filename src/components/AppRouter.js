@@ -1,6 +1,10 @@
 import React from 'react'
+
+// components
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
+
+// routes
 import { privateRoutes, publicRoutes, routeNames } from '../routes/routes'
 
 function AppRouter() {

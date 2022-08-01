@@ -2,16 +2,15 @@ import React from 'react'
 
 // store
 import { useDispatch, useSelector } from 'react-redux'
-import { setUserName, setUserPassword, login } from '../../redux/auth/authSlice'
+import { setAuth, login } from '../../redux/auth/authSlice'
 
 // components
 import { ToastContainer, toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
-import { Button, Checkbox, Form, Input, Typography } from 'antd'
+import { Button, Form, Input, Typography } from 'antd'
 
 // icons
-import { MdAccountCircle, MdFingerprint } from 'react-icons/md'
-
+import { UserOutlined, SafetyOutlined } from '@ant-design/icons'
 // styles
 import 'react-toastify/dist/ReactToastify.css'
 import '../../styles/auth/login.scss'
@@ -28,14 +27,14 @@ export default function Login() {
     }
 
     const onFinish = (values) => {
-        console.log('Success:', values)
+        dispatch(setAuth(values))
+
         dispatch(login())
         if (authState.isAuth) {
             navigate('/profile')
         } else {
             notifayWarning(authState.isError)
         }
-        dispatch(setUserPassword(values))
     }
 
     const onFinishFailed = (errorInfo) => {
@@ -69,7 +68,8 @@ export default function Login() {
                             ]}
                         >
                             <Input
-                                prefix={<MdAccountCircle />}
+                                className="form__action-icon"
+                                prefix={<UserOutlined />}
                                 placeholder="Имя пользователя"
                             />
                         </Form.Item>
@@ -84,13 +84,10 @@ export default function Login() {
                             ]}
                         >
                             <Input.Password
-                                prefix={<MdFingerprint />}
+                                className="form__action-icon"
+                                prefix={<SafetyOutlined />}
                                 placeholder="Пароль"
                             />
-                        </Form.Item>
-
-                        <Form.Item name="remember" valuePropName="checked">
-                            <Checkbox>Remember me</Checkbox>
                         </Form.Item>
 
                         <Form.Item>
