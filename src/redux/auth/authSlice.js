@@ -9,7 +9,7 @@ const initialState = {
     isError: false,
 }
 
-export const userSlice = createSlice({
+export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
@@ -52,6 +52,6 @@ export const {
     login,
     logout,
     setError,
-} = userSlice.actions
+} = authSlice.actions
 
-export default userSlice.reducer
+export default authSlice.reducer

@@ -1,16 +1,20 @@
-import React from "react";
-import AppRouter from "./components/AppRouter";
-import Header from "./components/Header/Header";
+import React from 'react'
 
-import "./styles/global.css";
+// components
+import AppRouter from './components/AppRouter'
+import MLayout from './components/MLayout/MLayout'
+
+// styles
+import './styles/global.css'
+import 'antd/dist/antd.css'
 
 function App() {
-  return (
-    <>
-      <Header />
-      <AppRouter />
-    </>
-  );
+    return (
+        <>
+            <MLayout />
+            <AppRouter />
+        </>
+    )
 }
 
-export default App;
+export default App

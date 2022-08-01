@@ -1,75 +1,102 @@
 import React from 'react'
+
+// store
 import { useDispatch, useSelector } from 'react-redux'
-import { setUserName, setUserPassword, login } from '../../redux/user/UserSlice'
+import { setUserName, setUserPassword, login } from '../../redux/auth/authSlice'
+
+// components
 import { ToastContainer, toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import { Button, Checkbox, Form, Input, Typography } from 'antd'
+
+// icons
+import { MdAccountCircle, MdFingerprint } from 'react-icons/md'
+
+// styles
 import 'react-toastify/dist/ReactToastify.css'
 import '../../styles/auth/login.scss'
 
+const { Title } = Typography
+
 export default function Login() {
-    const userState = useSelector((state) => state.auth)
+    const authState = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
-    const handleLoginInput = (event) => {
-        const value = event.target.value
-        dispatch(
-            setUserName(value?.split('')[0]?.toUpperCase() + value.slice(1))
-        )
-    }
-
-    const handlePassInput = (event) => {
-        const value = event.target.value
-        dispatch(setUserPassword(value))
-    }
 
     const notifayWarning = (text) => {
         toast.warning(text)
     }
 
-    const submitForm = (event) => {
-        event.preventDefault()
+    const onFinish = (values) => {
+        console.log('Success:', values)
         dispatch(login())
-        if (userState.isAuth) {
+        if (authState.isAuth) {
             navigate('/profile')
         } else {
-            notifayWarning(userState.isError)
+            notifayWarning(authState.isError)
         }
+        dispatch(setUserPassword(values))
+    }
+
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo)
     }
 
     return (
         <>
             <ToastContainer />
-            <div className="container login">
+            <div className="login">
                 <div className="login__wrapper">
-                    <form className="form" onSubmit={submitForm}>
-                        <h3>Форма авторизация</h3>
-                        <div className="form__group">
-                            <label htmlFor="in1">Логин</label>
-                            <input
-                                type="text"
-                                name="username"
-                                onChange={handleLoginInput}
-                                id="in1"
-                                required
+                    <Title level={2} className="m-text">
+                        Форма авторизация
+                    </Title>
+                    <Form
+                        name="basic"
+                        initialValues={{
+                            remember: true,
+                        }}
+                        onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
+                        autoComplete="off"
+                    >
+                        <Form.Item
+                            name="username"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Пожалуйста, введите Ваш логин!',
+                                },
+                            ]}
+                        >
+                            <Input
+                                prefix={<MdAccountCircle />}
+                                placeholder="Имя пользователя"
                             />
-                        </div>
-                        <div className="form__group">
-                            <label htmlFor="in2">Пароль</label>
-                            <input
-                                type="password"
-                                name="password"
-                                onChange={handlePassInput}
-                                id="in2"
-                                required
+                        </Form.Item>
+
+                        <Form.Item
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Пожалуйста введите ваш пароль!',
+                                },
+                            ]}
+                        >
+                            <Input.Password
+                                prefix={<MdFingerprint />}
+                                placeholder="Пароль"
                             />
-                        </div>
-                        <div className="form__group">
-                            <button type="submit" className="btn">
-                                Вход
-                            </button>
-                        </div>
-                    </form>
+                        </Form.Item>
+
+                        <Form.Item name="remember" valuePropName="checked">
+                            <Checkbox>Remember me</Checkbox>
+                        </Form.Item>
+
+                        <Form.Item>
+                            <Button htmlType="submit">Submit</Button>
+                        </Form.Item>
+                    </Form>
                 </div>
             </div>
         </>

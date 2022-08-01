@@ -1,18 +1,17 @@
 header {
     .active-list a {
-        color: #ffd000 !important;
+        color: #fe4f70 !important;
     }
     .navbar {
         position: fixed;
         width: 100%;
-        background: rgb(1, 119, 119);
+        background: #fff;
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.26);
         z-index: 1024;
 
         &__container {
             height: 70px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
 
             .menu {
@@ -26,11 +25,11 @@ header {
                     a {
                         font-size: 18px;
                         font-weight: normal;
-                        color: #ffffff;
+                        color: #203656;
                         transition: 0.5s ease-in-out;
 
                         &:hover {
-                            color: #ffd000;
+                            color: #fe4f70;
                         }
                     }
 
@@ -45,12 +44,15 @@ header {
                 align-items: center;
 
                 svg {
-                    color: #ffd000;
+                    color: #fe4f70;
                 }
             }
             .logo {
-                &__name {
-                    color: #ffffff;
+                height: inherit;
+                display: flex;
+                align-items: center;
+                h2 {
+                    color: #203656;
                 }
             }
         }

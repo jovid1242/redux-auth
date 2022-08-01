@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react'
+
+// store
 import { useDispatch, useSelector } from 'react-redux'
 import { getPosts } from '../../redux/post/postSlice'
+
+// components
 import Post from './Post'
 import Loader from '../Loader/Loader'
-import Post1 from '../../assets/post.jpg'
+
+// styles
 import '../../styles/posts/posts.scss'
 
 export default function Posts() {
@@ -25,7 +30,9 @@ export default function Posts() {
                                 key={el.id}
                                 title={el.title}
                                 text={el.body}
-                                image={Post1}
+                                image={
+                                    'https://katen-template.netlify.app/html/images/posts/post-xl-1.jpg'
+                                }
                             />
                         )
                     })}

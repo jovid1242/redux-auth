@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { logout } from '../redux/user/UserSlice'
+import { logout } from '../redux/auth/authSlice'
 import '../styles/profile/profile.scss'
 
 export default function Profile() {
