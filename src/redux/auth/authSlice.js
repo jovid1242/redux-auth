@@ -6,6 +6,7 @@ const initialState = {
         username: '',
         password: '',
     },
+    status: false,
     isError: false,
 }
 
@@ -14,17 +15,18 @@ export const authSlice = createSlice({
     initialState,
     reducers: {
         setAuth: (state, action) => {
-            state.isAuth = action.payload
             state.user.username = action.payload.username
             state.user.password = action.payload.password
         },
         login: (state) => {
+            state.status = true
             if (
-                state.user.username === 'Admin' &&
+                state.user.username === 'admin' &&
                 state.user.password === '12345'
             ) {
                 localStorage.setItem('auth', 1)
                 state.isAuth = true
+                state.status = false
             } else {
                 state.isError = 'Имя пользователя или пароль введены не верно'
             }

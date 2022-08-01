@@ -2,10 +2,12 @@
 import Login from '../pages/auth/Login'
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
+import Post from '../pages/Post'
 
 export const routeNames = {
     HOME: '/',
     LOGIN: '/login',
+    POST: '/post/:id',
     PROFILE: '/profile',
 }
 
@@ -29,8 +31,13 @@ export const privateRoutes = [
         path: routeNames.HOME,
     },
     {
-        id: 3,
+        id: 2,
         component: Profile,
         path: routeNames.PROFILE,
+    },
+    {
+        id: 3,
+        component: Post,
+        path: routeNames.POST,
     },
 ]

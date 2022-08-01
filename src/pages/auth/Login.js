@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // store
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,7 +7,9 @@ import { setAuth, login } from '../../redux/auth/authSlice'
 
 // components
 import { ToastContainer, toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import Loader from '../../components/Loader/Loader'
+
+// ant
 import { Button, Form, Input, Typography } from 'antd'
 
 // icons
@@ -28,7 +31,6 @@ export default function Login() {
 
     const onFinish = (values) => {
         dispatch(setAuth(values))
-
         dispatch(login())
         if (authState.isAuth) {
             navigate('/profile')
@@ -43,6 +45,7 @@ export default function Login() {
 
     return (
         <>
+            <Loader visible={authState.status} />
             <ToastContainer />
             <div className="login">
                 <div className="login__wrapper">

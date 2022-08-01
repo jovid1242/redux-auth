@@ -30,6 +30,7 @@ export default function Posts() {
                                 key={el.id}
                                 title={el.title}
                                 text={el.body}
+                                postId={el.id}
                                 image={
                                     'https://katen-template.netlify.app/html/images/posts/post-xl-1.jpg'
                                 }
