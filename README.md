@@ -22,6 +22,7 @@ Project uses a number of open source projects to work properly:
 -   [Redux-Toolkit](https://redux-toolkit.js.org/) - Simple. Includes utilities to simplify common use cases like store setup, creating reducers, immutable update logic, and more
 -   [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js - axios/axios: Promise based HTTP client for the browser and node.js.
 -   [React-Toastify](https://www.npmjs.com/package/react-toastify) - React notification made easy.
+-   [Ant design](https://ant.design/) - A design system for enterprise-level products.
 
 # TESTING (LOGIN)
 
