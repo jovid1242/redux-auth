@@ -6,13 +6,11 @@ The application can display the following pages:
 
 -   /home
 -   /login - login and password entry page
--   /news - page with news
 -   /profile - page with free text, inaccessible without authorization
 
 Main links on the site:
 
 -   Home (/)
--   News (/news)
 -   Profile (/profile)
 
 ## Tech
